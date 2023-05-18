@@ -29,6 +29,15 @@
 		03F59E472A16724D00942002 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E462A16724D00942002 /* NSObject+.swift */; };
 		03F59E492A16725C00942002 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E482A16725C00942002 /* UITextField+.swift */; };
 		03F59E4B2A16726A00942002 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E4A2A16726A00942002 /* UIStackView+.swift */; };
+		03F59E4D2A16729800942002 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E4C2A16729800942002 /* UITableView+.swift */; };
+		03F59E4F2A1672A600942002 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E4E2A1672A600942002 /* UICollectionView+.swift */; };
+		03F59E512A1672B200942002 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E502A1672B200942002 /* String+.swift */; };
+		03F59E532A1672BF00942002 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E522A1672BF00942002 /* UIImageView+.swift */; };
+		03F59E552A1672DF00942002 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E542A1672DF00942002 /* UILabel+.swift */; };
+		03F59E572A1672F100942002 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E562A1672F100942002 /* UIButton+.swift */; };
+		03F59E592A16730E00942002 /* UITabBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E582A16730E00942002 /* UITabBar+.swift */; };
+		03F59E5B2A16735B00942002 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E5A2A16735B00942002 /* UIImage+.swift */; };
+		03F59E5D2A16737B00942002 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E5C2A16737B00942002 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +65,15 @@
 		03F59E462A16724D00942002 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		03F59E482A16725C00942002 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		03F59E4A2A16726A00942002 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		03F59E4C2A16729800942002 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		03F59E4E2A1672A600942002 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		03F59E502A1672B200942002 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		03F59E522A1672BF00942002 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		03F59E542A1672DF00942002 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		03F59E562A1672F100942002 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		03F59E582A16730E00942002 /* UITabBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+.swift"; sourceTree = "<group>"; };
+		03F59E5A2A16735B00942002 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		03F59E5C2A16737B00942002 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +256,15 @@
 				03F59E462A16724D00942002 /* NSObject+.swift */,
 				03F59E482A16725C00942002 /* UITextField+.swift */,
 				03F59E4A2A16726A00942002 /* UIStackView+.swift */,
+				03F59E4C2A16729800942002 /* UITableView+.swift */,
+				03F59E4E2A1672A600942002 /* UICollectionView+.swift */,
+				03F59E502A1672B200942002 /* String+.swift */,
+				03F59E522A1672BF00942002 /* UIImageView+.swift */,
+				03F59E542A1672DF00942002 /* UILabel+.swift */,
+				03F59E562A1672F100942002 /* UIButton+.swift */,
+				03F59E582A16730E00942002 /* UITabBar+.swift */,
+				03F59E5A2A16735B00942002 /* UIImage+.swift */,
+				03F59E5C2A16737B00942002 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,18 +353,27 @@
 			files = (
 				03F59E432A16723100942002 /* UIFont+.swift in Sources */,
 				03F59E0A2A166FF400942002 /* ViewController.swift in Sources */,
+				03F59E512A1672B200942002 /* String+.swift in Sources */,
 				03F59E452A16723B00942002 /* UIView+.swift in Sources */,
+				03F59E4D2A16729800942002 /* UITableView+.swift in Sources */,
 				03F59E062A166FF400942002 /* AppDelegate.swift in Sources */,
+				03F59E4F2A1672A600942002 /* UICollectionView+.swift in Sources */,
+				03F59E592A16730E00942002 /* UITabBar+.swift in Sources */,
 				03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */,
+				03F59E552A1672DF00942002 /* UILabel+.swift in Sources */,
 				03F59E232A1670BA00942002 /* NetworkResult.swift in Sources */,
+				03F59E532A1672BF00942002 /* UIImageView+.swift in Sources */,
 				03F59E1E2A16709C00942002 /* Model.swift in Sources */,
+				03F59E572A1672F100942002 /* UIButton+.swift in Sources */,
 				03F59E3F2A1671F700942002 /* Color.swift in Sources */,
 				03F59E392A1671D400942002 /* CustomClass.swift in Sources */,
 				03F59E352A16717300942002 /* Font.swift in Sources */,
+				03F59E5B2A16735B00942002 /* UIImage+.swift in Sources */,
 				03F59E472A16724D00942002 /* NSObject+.swift in Sources */,
 				03F59E292A1670FE00942002 /* Main.swift in Sources */,
 				03F59E2C2A16710B00942002 /* MainCell.swift in Sources */,
 				03F59E3D2A1671F200942002 /* Image.swift in Sources */,
+				03F59E5D2A16737B00942002 /* UIViewController+.swift in Sources */,
 				03F59E202A1670A200942002 /* DTO.swift in Sources */,
 				03F59E4B2A16726A00942002 /* UIStackView+.swift in Sources */,
 				03F59E492A16725C00942002 /* UITextField+.swift in Sources */,
