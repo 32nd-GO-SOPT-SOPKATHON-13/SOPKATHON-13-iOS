@@ -45,7 +45,6 @@
 		03F59E772A190D0500942002 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E762A190D0500942002 /* MainViewController.swift */; };
 		03F59E7B2A190DC800942002 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E7A2A190DC800942002 /* HistoryViewController.swift */; };
 		03F59E7E2A190DFB00942002 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E7D2A190DFB00942002 /* HistoryView.swift */; };
-		03F59E812A190E1200942002 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E802A190E1200942002 /* History.swift */; };
 		03F59E852A190EC900942002 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E842A190EC900942002 /* NoticeViewController.swift */; };
 		03F59E882A190ED800942002 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E872A190ED800942002 /* NoticeView.swift */; };
 		03F59E8B2A190EEB00942002 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E8A2A190EEB00942002 /* Notice.swift */; };
@@ -57,6 +56,7 @@
 		03F59EA12A19113F00942002 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA02A19113F00942002 /* MainResponse.swift */; };
 		03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA22A19115000942002 /* HistoryResponse.swift */; };
 		03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA42A19115800942002 /* NoticeResponse.swift */; };
+		09329F3E2A192F3E00B10751 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +96,6 @@
 		03F59E762A190D0500942002 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		03F59E7A2A190DC800942002 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		03F59E7D2A190DFB00942002 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		03F59E802A190E1200942002 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		03F59E842A190EC900942002 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		03F59E872A190ED800942002 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		03F59E8A2A190EEB00942002 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		03F59EA02A19113F00942002 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		03F59EA22A19115000942002 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		03F59EA42A19115800942002 /* NoticeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeResponse.swift; sourceTree = "<group>"; };
+		09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,7 +388,7 @@
 		03F59E7F2A190E0300942002 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				03F59E802A190E1200942002 /* History.swift */,
+				09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -606,12 +606,12 @@
 				03F59E472A16724D00942002 /* NSObject+.swift in Sources */,
 				03F59E292A1670FE00942002 /* Main.swift in Sources */,
 				03F59E932A1910D000942002 /* MainModel.swift in Sources */,
+				09329F3E2A192F3E00B10751 /* HistoryTableViewCell.swift in Sources */,
 				03F59E2C2A16710B00942002 /* MainCell.swift in Sources */,
 				03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */,
 				03F59E752A190CE800942002 /* SignUp.swift in Sources */,
 				03F59E9D2A19111800942002 /* SignUpResponse.swift in Sources */,
 				03F59E3D2A1671F200942002 /* Image.swift in Sources */,
-				03F59E812A190E1200942002 /* History.swift in Sources */,
 				03F59E5D2A16737B00942002 /* UIViewController+.swift in Sources */,
 				03F59E732A190CDD00942002 /* SignUpView.swift in Sources */,
 				03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */,
