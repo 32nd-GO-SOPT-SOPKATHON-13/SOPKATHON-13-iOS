@@ -32,6 +32,8 @@ extension SignUpViewController {
     
     private func SetUI() {
         
+        navigationController?.isNavigationBarHidden = true
+        
         view.backgroundColor = Color.white
         
         thumbnailImage.do {
