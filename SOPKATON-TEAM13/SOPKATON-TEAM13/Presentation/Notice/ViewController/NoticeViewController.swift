@@ -35,6 +35,8 @@ final class NoticeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.clipsToBounds = true
     }
     
     override func viewDidLoad() {
