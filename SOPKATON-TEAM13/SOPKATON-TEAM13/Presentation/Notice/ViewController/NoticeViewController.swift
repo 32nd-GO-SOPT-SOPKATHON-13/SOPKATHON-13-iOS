@@ -15,6 +15,8 @@ final class NoticeViewController: UIViewController {
     
     // MARK: - UI Components
     
+    
+    private let noticeProfileView = NoticeProfileView()
     private let noticeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -64,11 +66,18 @@ extension NoticeViewController {
     
     private func setLayout() {
         
-        view.addSubviews(noticeCollectionView)
+        view.addSubviews(noticeProfileView, noticeCollectionView)
+        
+        noticeProfileView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(3)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(172)
+        }
         
         noticeCollectionView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-            
+            $0.top.equalTo(noticeProfileView.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(204)
         }
     }
     
