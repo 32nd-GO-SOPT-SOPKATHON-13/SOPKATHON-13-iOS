@@ -18,17 +18,21 @@ struct NoticeServerModel {
 extension NoticeModel {
     
     static func fetchNoticeModelData() -> [NoticeModel] {
-        NoticeModel(title: "내가 찔린 총 횟수"),
-        NoticeModel(title: "내가 찔린 날 수"),
-        NoticeModel(title: "아파트 평균 소음 발생 일 수")
+        return [
+            NoticeModel(title: "내가 찔린 총 횟수"),
+            NoticeModel(title: "내가 찔린 날 수"),
+            NoticeModel(title: "아파트 평균 소음 발생 일 수")
+        ]
     }
 }
 
-extension NoticeServerModel() -> [NoticeServerModel] {
+extension NoticeServerModel {
     
     static func fetchNoticeServerModelDummy() -> [NoticeServerModel] {
-        NoticeServerModel(count: "999"),
-        NoticeServerModel(count: "99"),
-        NoticeServerModel(count: "9999")
+        return [
+            NoticeServerModel(count: 999),
+            NoticeServerModel(count: 99),
+            NoticeServerModel(count: 9999)
+        ]
     }
 }
