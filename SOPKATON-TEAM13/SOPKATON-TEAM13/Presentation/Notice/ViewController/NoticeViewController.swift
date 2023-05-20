@@ -15,6 +15,13 @@ final class NoticeViewController: UIViewController {
     
     // MARK: - UI Components
     
+    private let noticeCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return collectionView
+    }()
+    
     // MARK: - Properties
     
     // MARK: - Initializer
@@ -30,6 +37,8 @@ final class NoticeViewController: UIViewController {
         setUI()
         setLayout()
         setNavigationBar()
+        setDelegate()
+        setRegister()
     }
 }
 
@@ -41,15 +50,33 @@ extension NoticeViewController {
         
         view.backgroundColor = Color.white
         
+        noticeCollectionView.do {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.showsHorizontalScrollIndicator = false
+            $0.backgroundColor = .clear
+            $0.isScrollEnabled = false
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
+        noticeCollectionView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     // MARK: - Methods
+    
+    private func setDelegate() {
+        noticeCollectionView.dataSource = self
+        noticeCollectionView.delegate = self
+    }
+    
+    private func setRegister() {
+        noticeCollectionView.registerCell(NoticeCollectionViewCell.self)
+    }
     
     private func setNavigationBar() {
 //        navigationController?.navigationBar.tintColor = Color.white
@@ -79,3 +106,29 @@ extension NoticeViewController {
     
     // MARK: - @objc Methods
 }
+
+extension NoticeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        let height = 60.0
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+}
+
+extension NoticeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueCell(type: NoticeCollectionViewCell.self, indexPath: indexPath)
+        return cell
+    }
+}
+
+

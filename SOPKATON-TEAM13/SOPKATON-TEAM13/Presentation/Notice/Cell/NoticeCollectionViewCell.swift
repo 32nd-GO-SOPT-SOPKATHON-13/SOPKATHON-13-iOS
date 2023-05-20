@@ -67,7 +67,7 @@ extension NoticeCollectionViewCell {
         countLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.trailing.equalToSuperview().inset(19)
-//            $0.width.equalTo(60)
+            $0.width.equalTo(60)
             $0.height.equalTo(32)
         }
     }
