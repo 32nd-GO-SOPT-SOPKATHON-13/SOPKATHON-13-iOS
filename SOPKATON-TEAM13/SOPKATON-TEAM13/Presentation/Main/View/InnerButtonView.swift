@@ -23,7 +23,7 @@ final class InnerButtonView: UIView {
     }()
     
     private let innerShadowView = UIView()
-    private let innerButton = UIButton(type: .system)
+    let innerButton = UIButton(type: .system)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,9 +67,8 @@ extension InnerButtonView {
         
         innerButton.do {
             $0.backgroundColor = .white
-            $0.setBackgroundColor(color: Color.gray1)
+            $0.setBackgroundColor(color: Color.gray4)
             $0.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-            
         }
     }
     

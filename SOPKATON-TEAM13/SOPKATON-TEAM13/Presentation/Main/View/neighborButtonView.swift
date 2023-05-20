@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class neighborButtonView: UIView {
+final class neighborButtonView: UIButton {
     
     private var address: Int
     private var pokedCount: Int
@@ -15,6 +15,7 @@ final class neighborButtonView: UIView {
     private let houseAddressLabel = UILabel()
     private let countLabel = UILabel()
     private let innerButton = InnerButtonView()
+    private let emptyView = UIView()
     
     init(addressNumber address: Int, pokedCount: Int) {
         self.address = address
@@ -68,7 +69,7 @@ extension neighborButtonView {
         self.addSubviews(houseAddressLabel, countLabel, innerButton)
         
         houseAddressLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(32)
+            $0.top.equalToSuperview().inset(22)
             $0.centerX.equalToSuperview()
         }
 
@@ -84,7 +85,6 @@ extension neighborButtonView {
             $0.size.equalTo(32)
             $0.centerX.equalToSuperview()
         }
-        
     }
 }
 
@@ -94,5 +94,12 @@ extension neighborButtonView {
         self.pokedCount = passedCount
         houseAddressLabel.text = String(passedAddress) + "호"
         countLabel.text = String(self.pokedCount)
+    }
+    
+    func isViewClicked() {
+        innerButton.innerButton.backgroundColor = Color.gray1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.07) { [weak self] in
+            self?.innerButton.innerButton.backgroundColor = .white
+        }
     }
 }

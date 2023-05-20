@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
-    private lazy var buttonWidth = UIScreen.main.bounds.width / 3.15
+    private lazy var buttonWidth = UIScreen.main.bounds.width / 3.08
     private lazy var buttonHeight = buttonWidth * 1.19
     
     private let upperHouseView = neighborButtonView(addressNumber: 1402, pokedCount: 999)
@@ -22,11 +22,18 @@ class MainViewController: UIViewController {
     
     private let todayPokedCount = UILabel()
     private let mainCharacterImageView = UIImageView()
+    private let moveToBillButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
@@ -36,13 +43,42 @@ extension MainViewController {
         view.backgroundColor = .white
         
         configureCell(999)
+        
+        upperHouseView.do {
+            $0.isUserInteractionEnabled = true
+            $0.addTarget(self, action: #selector(upperButtonTapped), for: .touchUpInside)
+        }
+        
+        lowerHouseView.do {
+            $0.isUserInteractionEnabled = true
+            $0.addTarget(self, action: #selector(lowerButtonTapped), for: .touchUpInside)
+        }
+        
+        leftHouseView.do {
+            $0.isUserInteractionEnabled = true
+            $0.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
+        }
+        
+        rightHouseView.do {
+            $0.isUserInteractionEnabled = true
+            $0.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        }
+        
+        mainCharacterImageView.do {
+            $0.image = UIImage(named: "img_thumbnail")
+            $0.contentMode = .scaleAspectFit
+        }
+        
+        moveToBillButton.do {
+            $0.setImage(UIImage(named: "bill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
     }
     
     private func setLayout() {
-        view.addSubviews(todayPokedCount, upperHouseView, lowerHouseView, leftHouseView, rightHouseView)
+        view.addSubviews(todayPokedCount, upperHouseView, lowerHouseView, leftHouseView, rightHouseView, mainCharacterImageView, moveToBillButton)
         
         todayPokedCount.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.centerX.equalToSuperview()
         }
         
@@ -73,12 +109,26 @@ extension MainViewController {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
+        
+        mainCharacterImageView.snp.makeConstraints {
+            $0.centerY.equalTo(rightHouseView.snp.centerY)
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(90)
+        }
+        
+        moveToBillButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(lowerHouseView.snp.bottom).offset(70)
+        }
+    }
+    
+    private func setGesture() {
+//        let tapped = UITapGestureRecognizer(target: self, action: #selector(<#T##@objc method#>))
     }
 }
 
 extension MainViewController {
     func configureCell(_ data: Int) {
-        
         todayPokedCount.text = "오늘 나는 \(data) 번 찔렸어요 🥹"
         let fullText = todayPokedCount.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
@@ -86,5 +136,27 @@ extension MainViewController {
         attribtuedString.addAttribute(.foregroundColor, value: UIColor.MainColor, range: range)
         attribtuedString.addAttribute(.font, value: UIFont.appleSDGothic(weightOf: .Bold, sizeOf: .font24) ?? UIFont(), range: range)
         todayPokedCount.attributedText = attribtuedString
+    }
+}
+
+extension MainViewController {
+    @objc
+    private func upperButtonTapped() {
+        upperHouseView.isViewClicked()
+    }
+    
+    @objc
+    private func lowerButtonTapped() {
+        lowerHouseView.isViewClicked()
+    }
+    
+    @objc
+    private func leftButtonTapped() {
+        leftHouseView.isViewClicked()
+    }
+    
+    @objc
+    private func rightButtonTapped() {
+        rightHouseView.isViewClicked()
     }
 }
