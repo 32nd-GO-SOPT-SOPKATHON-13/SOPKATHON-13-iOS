@@ -51,7 +51,7 @@ extension NoticeWeekView {
         noiseCostLabel.do {
             $0.text = "소음관리비 부과현황"
             $0.font = .appleSDGothic(weightOf: .Regular, sizeOf: .font14)
-            $0.textColor = Color.gray4
+            $0.textColor = Color.main
         }
     }
     

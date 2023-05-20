@@ -67,7 +67,7 @@ extension NoticeViewController {
         noticeWeekView.do {
             $0.layer.cornerRadius = 8
             $0.clipsToBounds = true
-            $0.makeBorder(width: 1, color: Color.gray7)
+            $0.makeBorder(width: 1, color: Color.main)
         }
     }
     

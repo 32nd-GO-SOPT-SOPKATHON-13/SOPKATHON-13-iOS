@@ -42,10 +42,10 @@ extension NoticeProfileView {
     
     private func setUI() {
         
-        backgroundColor = Color.gray4
+        backgroundColor = Color.green1
         
         headerLineView.do {
-            $0.backgroundColor = Color.gray7
+            $0.backgroundColor = Color.main
         }
         
         noticeImageView.do {
@@ -55,7 +55,7 @@ extension NoticeProfileView {
         weekNoisePeopleLabel.do {
             $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font24)
             $0.text = "이주의 소문나"
-            $0.partColorChange(targetString: "소문나", textColor: Color.gray1)
+            $0.partColorChange(targetString: "소문나", textColor: Color.main)
         }
         
         userNameLabel.do {

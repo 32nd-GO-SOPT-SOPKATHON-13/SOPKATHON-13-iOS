@@ -48,7 +48,8 @@ extension NoticeCollectionViewCell {
         
         countLabel.do {
             $0.backgroundColor = Color.gray1
-            $0.textColor = Color.gray4
+            $0.textColor = Color.main
+            $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font14)
             $0.textAlignment = .center
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
@@ -57,7 +58,7 @@ extension NoticeCollectionViewCell {
         }
         
         underLineView.do {
-            $0.backgroundColor = Color.gray6
+            $0.backgroundColor = Color.green1
         }
     }
     
