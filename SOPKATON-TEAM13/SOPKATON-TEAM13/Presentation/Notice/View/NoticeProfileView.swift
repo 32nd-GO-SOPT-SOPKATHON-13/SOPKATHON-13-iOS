@@ -48,6 +48,10 @@ extension NoticeProfileView {
             $0.backgroundColor = Color.gray7
         }
         
+        noticeImageView.do {
+            $0.image = UIImage(named: "character")
+        }
+        
         weekNoisePeopleLabel.do {
             $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font24)
             $0.text = "이주의 소문나"
@@ -65,12 +69,17 @@ extension NoticeProfileView {
     
     private func setLayout() {
         
-        addSubviews(headerLineView, weekNoisePeopleLabel, userNameLabel)
+        addSubviews(headerLineView, noticeImageView, weekNoisePeopleLabel, userNameLabel)
         
         headerLineView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(8)
+        }
+        
+        noticeImageView.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(17)
         }
         
         userNameLabel.snp.makeConstraints {
