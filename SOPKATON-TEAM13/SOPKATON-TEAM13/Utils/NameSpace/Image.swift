@@ -5,4 +5,10 @@
 //  Created by KJ on 2023/05/18.
 //
 
-import Foundation
+import UIKit
+
+public enum Image {
+
+    static var backBtn: UIImage { UIImage(named: "backBtn")! }
+}
+
