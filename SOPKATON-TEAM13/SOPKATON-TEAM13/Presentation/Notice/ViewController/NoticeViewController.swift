@@ -114,7 +114,7 @@ extension NoticeViewController {
     private func setNavigationBar() {
         navigationController?.navigationBar.tintColor = Color.gray9
         navigationController?.navigationBar.backgroundColor = Color.white
-        let buttonInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8) // 원하는 여백 값으로 수정
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: Image.backBtn,
             style: .plain,
@@ -135,6 +135,23 @@ extension NoticeViewController {
             titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)
             navigationItem.titleView = titleLabel
         }
+    }
+    
+    func labelWidthSize(index: Int) -> Int {
+        let count = String(noticeServerModel[index].count)
+        if count.count > 3 {
+            let size = count.size(
+                withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .bold)]).width + 36
+            print(noticeServerModel[index].count)
+            print(size)
+            return Int(size)
+        } else {
+            return 60
+        }
+    }
+    
+    func countLabelSizeSetting(cell: NoticeCollectionViewCell?, indexPath: IndexPath) {
+        cell?.setCountLabelSize(size: labelWidthSize(index: indexPath.row))
     }
     
     // MARK: - @objc Methods
@@ -165,6 +182,7 @@ extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: NoticeCollectionViewCell.self, indexPath: indexPath)
         cell.setDataBind(model: noticeTitleModel[indexPath.row], serverModel: noticeServerModel[indexPath.row])
+        countLabelSizeSetting(cell: cell, indexPath: indexPath)
         return cell
     }
 }

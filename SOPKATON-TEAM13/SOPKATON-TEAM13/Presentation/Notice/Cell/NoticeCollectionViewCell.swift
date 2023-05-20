@@ -76,7 +76,7 @@ extension NoticeCollectionViewCell {
         countLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(19)
-            $0.width.equalTo(60)
+//            $0.width.equalTo(60)
             $0.height.equalTo(32)
         }
         
@@ -89,22 +89,15 @@ extension NoticeCollectionViewCell {
     
     // MARK: - Methods
     
-    private func setCountLabelWidth(text: String) -> Int {
-        let text = "999"
-        if (text.count > 3) {
-            let size = text.size(
-                withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .bold)]).width
-            print(size)
-            return Int(size)
-        }
-        else {
-            print("else")
-            return 60
-        }
-    }
-    
     func setDataBind(model: NoticeModel, serverModel: NoticeServerModel) {
         titleLabel.text = model.title
         countLabel.text = "\(serverModel.count)"
+    }
+    
+    func setCountLabelSize(size: Int) {
+        let size = size
+        countLabel.snp.makeConstraints {
+            $0.width.equalTo(size)
+        }
     }
 }
