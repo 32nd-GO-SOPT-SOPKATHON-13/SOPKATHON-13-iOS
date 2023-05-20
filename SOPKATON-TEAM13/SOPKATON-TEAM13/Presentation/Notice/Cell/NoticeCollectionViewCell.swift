@@ -17,6 +17,7 @@ final class NoticeCollectionViewCell: UICollectionViewCell {
     
     private let titleLabel = UILabel()
     private let countLabel = UILabel()
+    private let underLineView = UIView()
     
     // MARK: - View Life Cycle
     
@@ -54,13 +55,17 @@ extension NoticeCollectionViewCell {
             $0.sizeToFit()
 //            $0.text = "999"
         }
+        
+        underLineView.do {
+            $0.backgroundColor = Color.gray6
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        addSubviews(titleLabel, countLabel)
+        addSubviews(titleLabel, countLabel, underLineView)
         
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
@@ -72,6 +77,12 @@ extension NoticeCollectionViewCell {
             $0.trailing.equalToSuperview().inset(19)
             $0.width.equalTo(60)
             $0.height.equalTo(32)
+        }
+        
+        underLineView.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(17)
+            $0.height.equalTo(1)
         }
     }
     
