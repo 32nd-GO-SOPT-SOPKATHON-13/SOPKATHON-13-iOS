@@ -12,7 +12,7 @@ struct NoticeModel {
 }
 
 struct NoticeServerModel {
-    let count: Int
+    var count: Int
 }
 
 extension NoticeModel {
@@ -26,13 +26,9 @@ extension NoticeModel {
     }
 }
 
-extension NoticeServerModel {
+//extension NoticeServerModel {
     
-    static func fetchNoticeServerModelDummy() -> [NoticeServerModel] {
-        return [
-            NoticeServerModel(count: 999),
-            NoticeServerModel(count: 99),
-            NoticeServerModel(count: 9999)
-        ]
-    }
-}
+//    static func fetchNoticeServerModelDummy() -> NoticeServerModel {
+//        return NoticeServerModel(averageCount: 99, complainedDays: 999, complainedCount: 9999)
+//    }
+//}

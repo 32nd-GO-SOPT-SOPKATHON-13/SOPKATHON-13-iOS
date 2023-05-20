@@ -13,10 +13,18 @@
 import Foundation
 
 // MARK: - ContentResponse
-struct ContentResponse: Codable {
+struct NoticeResponse: Codable {
     let code: Int
     let message: String
     let data: DataClass
+    
+    func convertToNotice() -> [NoticeServerModel] {
+        return [
+            NoticeServerModel(count: data.averageCount),
+            NoticeServerModel(count: data.complainedDays),
+            NoticeServerModel(count: data.complainedCount)
+        ]
+    }
 }
 
 // MARK: - DataClass

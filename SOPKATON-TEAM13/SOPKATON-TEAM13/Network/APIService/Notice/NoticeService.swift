@@ -16,7 +16,7 @@ final class NoticeService {
     
     let url = "http://13.125.253.67:8080/user/1302/weekly?startDate=2023-05-01&endDate=2023-05-31"
     
-    func content(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func notice(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
         let dataRequest = AF.request(url,
@@ -48,7 +48,7 @@ final class NoticeService {
     
     private func isValidData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(ContentResponse.self, from: data) else { return .pathErr }
+        guard let decodedData = try? decoder.decode(NoticeResponse.self, from: data) else { return .pathErr }
         return .success(decodedData as Any)
     }
 }
