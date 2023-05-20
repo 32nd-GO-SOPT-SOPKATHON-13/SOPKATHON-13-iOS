@@ -7,23 +7,46 @@
 
 import UIKit
 
-class NoticeViewController: UIViewController {
+import Alamofire
+import SnapKit
+import Then
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class ViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    // MARK: - Properties
+    
+    // MARK: - Initializer
+    
+    // MARK: - View Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+        setLayout()
     }
-    */
+}
 
+extension ViewController {
+    
+    // MARK: - UI Components Property
+    
+    private func setUI() {
+        
+    }
+    
+    // MARK: - Layout Helper
+    
+    private func setLayout() {
+        
+    }
+    
+    // MARK: - Methods
+    
+    // MARK: - @objc Methods
 }
