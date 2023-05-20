@@ -13,7 +13,6 @@
 		03F59E0F2A166FF600942002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E0E2A166FF600942002 /* Assets.xcassets */; };
 		03F59E122A166FF600942002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E102A166FF600942002 /* LaunchScreen.storyboard */; };
 		03F59E232A1670BA00942002 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E222A1670BA00942002 /* NetworkResult.swift */; };
-		03F59E292A1670FE00942002 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E282A1670FE00942002 /* Main.swift */; };
 		03F59E2C2A16710B00942002 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E2B2A16710B00942002 /* MainCell.swift */; };
 		03F59E302A16714F00942002 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E2F2A16714F00942002 /* Color.xcassets */; };
 		03F59E352A16717300942002 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E342A16717300942002 /* Font.swift */; };
@@ -57,6 +56,9 @@
 		03F59EA12A19113F00942002 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA02A19113F00942002 /* MainResponse.swift */; };
 		03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA22A19115000942002 /* HistoryResponse.swift */; };
 		03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA42A19115800942002 /* NoticeResponse.swift */; };
+		58F359832A19195800C094F0 /* neighborButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359822A19195800C094F0 /* neighborButtonView.swift */; };
+		58F359852A1920BE00C094F0 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359842A1920BE00C094F0 /* UIColor+.swift */; };
+		58F359872A1933A100C094F0 /* InnerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359862A1933A100C094F0 /* InnerButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +70,6 @@
 		03F59E112A166FF600942002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F59E132A166FF600942002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F59E222A1670BA00942002 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		03F59E282A1670FE00942002 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		03F59E2B2A16710B00942002 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		03F59E2F2A16714F00942002 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03F59E342A16717300942002 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -108,6 +109,9 @@
 		03F59EA02A19113F00942002 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		03F59EA22A19115000942002 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		03F59EA42A19115800942002 /* NoticeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeResponse.swift; sourceTree = "<group>"; };
+		58F359822A19195800C094F0 /* neighborButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neighborButtonView.swift; sourceTree = "<group>"; };
+		58F359842A1920BE00C094F0 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		58F359862A1933A100C094F0 /* InnerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +240,8 @@
 		03F59E272A1670F500942002 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				03F59E282A1670FE00942002 /* Main.swift */,
+				58F359822A19195800C094F0 /* neighborButtonView.swift */,
+				58F359862A1933A100C094F0 /* InnerButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				03F59E582A16730E00942002 /* UITabBar+.swift */,
 				03F59E5A2A16735B00942002 /* UIImage+.swift */,
 				03F59E5C2A16737B00942002 /* UIViewController+.swift */,
+				58F359842A1920BE00C094F0 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -604,7 +610,6 @@
 				03F59E352A16717300942002 /* Font.swift in Sources */,
 				03F59E5B2A16735B00942002 /* UIImage+.swift in Sources */,
 				03F59E472A16724D00942002 /* NSObject+.swift in Sources */,
-				03F59E292A1670FE00942002 /* Main.swift in Sources */,
 				03F59E932A1910D000942002 /* MainModel.swift in Sources */,
 				03F59E2C2A16710B00942002 /* MainCell.swift in Sources */,
 				03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */,
@@ -613,8 +618,11 @@
 				03F59E3D2A1671F200942002 /* Image.swift in Sources */,
 				03F59E812A190E1200942002 /* History.swift in Sources */,
 				03F59E5D2A16737B00942002 /* UIViewController+.swift in Sources */,
+				58F359872A1933A100C094F0 /* InnerButtonView.swift in Sources */,
+				58F359852A1920BE00C094F0 /* UIColor+.swift in Sources */,
 				03F59E732A190CDD00942002 /* SignUpView.swift in Sources */,
 				03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */,
+				58F359832A19195800C094F0 /* neighborButtonView.swift in Sources */,
 				03F59E4B2A16726A00942002 /* UIStackView+.swift in Sources */,
 				03F59E492A16725C00942002 /* UITextField+.swift in Sources */,
 			);
