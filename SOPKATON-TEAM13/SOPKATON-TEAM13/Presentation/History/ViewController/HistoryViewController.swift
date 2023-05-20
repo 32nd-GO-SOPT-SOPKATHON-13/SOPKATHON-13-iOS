@@ -81,7 +81,7 @@ final class HistoryViewController: UIViewController {
             image: Image.backBtn,
             style: .plain,
             target: self,
-            action: .none
+            action: #selector(backButtonTapped)
         )
         
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -99,6 +99,19 @@ final class HistoryViewController: UIViewController {
             titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)
             navigationItem.titleView = titleLabel
         }
+    }
+    @objc
+    func backButtonTapped() {
+        let transition = CATransition().then {
+            $0.duration = 0.25
+            $0.type = .push
+            $0.subtype = .fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        view.window?.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false)
+        let mainViewController = MainViewController()
+        self.navigationController?.pushViewController(mainViewController, animated: false)
     }
 }
 
