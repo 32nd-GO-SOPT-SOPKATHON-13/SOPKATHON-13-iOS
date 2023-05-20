@@ -17,6 +17,7 @@ final class NoticeViewController: UIViewController {
     
     
     private let noticeProfileView = NoticeProfileView()
+    private let noticeWeekView = NoticeWeekView()
     private let noticeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -60,13 +61,19 @@ extension NoticeViewController {
             $0.backgroundColor = .clear
             $0.isScrollEnabled = false
         }
+        
+        noticeWeekView.do {
+            $0.layer.cornerRadius = 8
+            $0.clipsToBounds = true
+            $0.makeBorder(width: 1, color: Color.gray7)
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        view.addSubviews(noticeProfileView, noticeCollectionView)
+        view.addSubviews(noticeProfileView, noticeWeekView, noticeCollectionView)
         
         noticeProfileView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(3)
@@ -74,8 +81,14 @@ extension NoticeViewController {
             $0.height.equalTo(172)
         }
         
+        noticeWeekView.snp.makeConstraints {
+            $0.top.equalTo(noticeProfileView.snp.bottom).offset(24)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.height.equalTo(55)
+        }
+        
         noticeCollectionView.snp.makeConstraints {
-            $0.top.equalTo(noticeProfileView.snp.bottom)
+            $0.top.equalTo(noticeWeekView.snp.bottom).offset(16)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(204)
         }
