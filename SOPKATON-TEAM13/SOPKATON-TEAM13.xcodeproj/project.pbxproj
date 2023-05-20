@@ -57,6 +57,7 @@
 		03F59EA12A19113F00942002 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA02A19113F00942002 /* MainResponse.swift */; };
 		03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA22A19115000942002 /* HistoryResponse.swift */; };
 		03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA42A19115800942002 /* NoticeResponse.swift */; };
+		DF4702562A194E0900A71214 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4702552A194E0900A71214 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		03F59EA02A19113F00942002 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		03F59EA22A19115000942002 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		03F59EA42A19115800942002 /* NoticeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeResponse.swift; sourceTree = "<group>"; };
+		DF4702552A194E0900A71214 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				03F59E222A1670BA00942002 /* NetworkResult.swift */,
+				DF4702552A194E0900A71214 /* LoginService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				03F59E592A16730E00942002 /* UITabBar+.swift in Sources */,
 				03F59E772A190D0500942002 /* MainViewController.swift in Sources */,
 				03F59E8B2A190EEB00942002 /* Notice.swift in Sources */,
+				DF4702562A194E0900A71214 /* LoginService.swift in Sources */,
 				03F59E952A1910D800942002 /* HistoryModel.swift in Sources */,
 				03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */,
 				03F59E972A1910E300942002 /* NoticeHistory.swift in Sources */,
