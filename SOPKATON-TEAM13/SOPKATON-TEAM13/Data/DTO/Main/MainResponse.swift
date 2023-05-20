@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+struct MainResponses: Codable {
+    let code: Int
+    let message: String
+    let data: PokingData
+}
+
+// MARK: - DataClass
+struct PokingData: Codable {
+    var up, dataRight, dataLeft, down: [Int]
+    var receiveCount: Int
+
+    enum CodingKeys: String, CodingKey {
+        case up
+        case dataRight = "right"
+        case dataLeft = "left"
+        case down, receiveCount
+    }
+}

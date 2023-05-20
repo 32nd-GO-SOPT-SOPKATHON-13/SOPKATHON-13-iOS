@@ -12,8 +12,11 @@ import Then
 
 final class MainViewController: UIViewController {
     
+    private let mainAPIManager = MainCountManager.shared
+//    private lazy var datasFetched =
     private lazy var buttonWidth = UIScreen.main.bounds.width / 3.08
     private lazy var buttonHeight = buttonWidth * 1.19
+    private var initialData: NeighborModel = NeighborModel(upperCount: [], lowerCount: [], leftCount: [], rightCount: [], myCount: 0)
     
     private let upperHouseView = neighborButtonView(addressNumber: 1402, pokedCount: 999)
     private let lowerHouseView = neighborButtonView(addressNumber: 1402, pokedCount: 999)
@@ -28,12 +31,18 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        getData { [weak self] in
+            self?.upperHouseView.configureView(passedAddress: $0.upperCount[0], passedCount: $0.upperCount[1])
+            self?.lowerHouseView.configureView(passedAddress: $0.lowerCount[0], passedCount: $0.lowerCount[1])
+            self?.leftHouseView.configureView(passedAddress: $0.leftCount[0], passedCount: $0.leftCount[1])
+            self?.rightHouseView.configureView(passedAddress: $0.rightCount[0], passedCount: $0.rightCount[1])
+            self?.configureCell($0.myCount)
+        }
     }
 }
 
@@ -41,8 +50,6 @@ extension MainViewController {
     
     private func setUI() {
         view.backgroundColor = .white
-        
-        configureCell(999)
         
         upperHouseView.do {
             $0.isUserInteractionEnabled = true
@@ -122,8 +129,26 @@ extension MainViewController {
         }
     }
     
-    private func setGesture() {
-//        let tapped = UITapGestureRecognizer(target: self, action: #selector(<#T##@objc method#>))
+    private func getData(completion: @escaping (NeighborModel) -> Void) {
+        mainAPIManager.getCounts { response in
+            switch response {
+            case .success(let data):
+                print("erhkugerhuerghkuer")
+
+                guard let data = data as? MainResponses else {
+                    print("eragljknrgkjerkgbkerbgkebrgkberkg")
+                    return }
+                let countData = data.data
+                self.initialData.upperCount = countData.up
+                self.initialData.lowerCount = countData.down
+                self.initialData.rightCount = countData.dataRight
+                self.initialData.leftCount = countData.dataLeft
+                self.initialData.myCount = countData.receiveCount
+                completion(self.initialData)
+            default:
+                break
+            }
+        }
     }
 }
 
