@@ -21,6 +21,8 @@ final class NoticeViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
+    private let noticeTitleModel = NoticeModel.fetchNoticeModelData()
+    private let noticeServerModel = NoticeServerModel.fetchNoticeServerModelDummy()
     
     // MARK: - Properties
     
@@ -62,8 +64,11 @@ extension NoticeViewController {
     
     private func setLayout() {
         
+        view.addSubviews(noticeCollectionView)
+        
         noticeCollectionView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            
         }
     }
     
@@ -122,11 +127,12 @@ extension NoticeViewController: UICollectionViewDelegateFlowLayout {
 
 extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return noticeTitleModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: NoticeCollectionViewCell.self, indexPath: indexPath)
+        cell.setDataBind(model: noticeTitleModel[indexPath.row], serverModel: noticeServerModel[indexPath.row])
         return cell
     }
 }

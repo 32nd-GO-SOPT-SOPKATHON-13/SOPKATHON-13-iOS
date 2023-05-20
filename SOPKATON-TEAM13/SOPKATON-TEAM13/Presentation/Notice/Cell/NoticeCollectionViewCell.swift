@@ -42,16 +42,17 @@ extension NoticeCollectionViewCell {
         titleLabel.do {
             $0.font = .systemFont(ofSize: 18, weight: .bold)
             $0.textColor = Color.gray9
-            $0.text = "가나다라"
+//            $0.text = "가나다라"
         }
         
         countLabel.do {
             $0.backgroundColor = Color.gray1
             $0.textColor = Color.gray4
             $0.textAlignment = .center
-            $0.layer.cornerRadius = 10
+            $0.layer.cornerRadius = 16
+            $0.clipsToBounds = true
             $0.sizeToFit()
-            $0.text = "999"
+//            $0.text = "999"
         }
     }
     
@@ -59,13 +60,15 @@ extension NoticeCollectionViewCell {
     
     private func setLayout() {
         
+        addSubviews(titleLabel, countLabel)
+        
         titleLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(17)
         }
         
         countLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(19)
             $0.width.equalTo(60)
             $0.height.equalTo(32)
@@ -86,5 +89,10 @@ extension NoticeCollectionViewCell {
             print("else")
             return 60
         }
+    }
+    
+    func setDataBind(model: NoticeModel, serverModel: NoticeServerModel) {
+        titleLabel.text = model.title
+        countLabel.text = "\(serverModel.count)"
     }
 }
