@@ -25,7 +25,7 @@ final class NoticeViewController: UIViewController {
         return collectionView
     }()
     private let noticeTitleModel = NoticeModel.fetchNoticeModelData()
-    private let noticeServerModel = NoticeServerModel.fetchNoticeServerModelDummy()
+    private var noticeServerModel: [NoticeServerModel] = []
     
     // MARK: - Properties
     
@@ -46,6 +46,7 @@ final class NoticeViewController: UIViewController {
         setNavigationBar()
         setDelegate()
         setRegister()
+        fetchNotice()
     }
 }
 
@@ -138,11 +139,11 @@ extension NoticeViewController {
     }
     
     func labelWidthSize(index: Int) -> Int {
-        let count = String(noticeServerModel[index].count)
+        let count = String(noticeServerModel.count)
         if count.count > 3 {
             let size = count.size(
                 withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .bold)]).width + 36
-            print(noticeServerModel[index].count)
+            print(noticeServerModel.count)
             print(size)
             return Int(size)
         } else {
@@ -176,15 +177,39 @@ extension NoticeViewController: UICollectionViewDelegateFlowLayout {
 
 extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noticeTitleModel.count
+        return noticeServerModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: NoticeCollectionViewCell.self, indexPath: indexPath)
+        print(indexPath.row)
         cell.setDataBind(model: noticeTitleModel[indexPath.row], serverModel: noticeServerModel[indexPath.row])
         countLabelSizeSetting(cell: cell, indexPath: indexPath)
         return cell
     }
 }
 
-
+extension NoticeViewController {
+    
+    private func fetchNotice() {
+        NoticeService.shared.notice { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? NoticeResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.noticeServerModel = data.convertToNotice()
+                self.noticeCollectionView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("-----------경로이상-------------")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
+    }
+}

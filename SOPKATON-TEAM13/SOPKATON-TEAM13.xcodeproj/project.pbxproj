@@ -55,7 +55,7 @@
 		03F59E912A1910C900942002 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E902A1910C900942002 /* SignUpModel.swift */; };
 		03F59E932A1910D000942002 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E922A1910D000942002 /* MainModel.swift */; };
 		03F59E952A1910D800942002 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E942A1910D800942002 /* HistoryModel.swift */; };
-		03F59E972A1910E300942002 /* NoticeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E962A1910E300942002 /* NoticeHistory.swift */; };
+		03F59E972A1910E300942002 /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E962A1910E300942002 /* NoticeModel.swift */; };
 		03F59E9D2A19111800942002 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E9C2A19111800942002 /* SignUpResponse.swift */; };
 		03F59EA12A19113F00942002 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA02A19113F00942002 /* MainResponse.swift */; };
 		03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA22A19115000942002 /* HistoryResponse.swift */; };
@@ -114,7 +114,7 @@
 		03F59E902A1910C900942002 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		03F59E922A1910D000942002 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		03F59E942A1910D800942002 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
-		03F59E962A1910E300942002 /* NoticeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHistory.swift; sourceTree = "<group>"; };
+		03F59E962A1910E300942002 /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
 		03F59E9C2A19111800942002 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		03F59EA02A19113F00942002 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		03F59EA22A19115000942002 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
@@ -518,7 +518,7 @@
 		03F59E8F2A190FBE00942002 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				03F59E962A1910E300942002 /* NoticeHistory.swift */,
+				03F59E962A1910E300942002 /* NoticeModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -658,7 +658,7 @@
 				DF4702562A194E0900A71214 /* LoginService.swift in Sources */,
 				03F59E952A1910D800942002 /* HistoryModel.swift in Sources */,
 				03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */,
-				03F59E972A1910E300942002 /* NoticeHistory.swift in Sources */,
+				03F59E972A1910E300942002 /* NoticeModel.swift in Sources */,
 				03F59E552A1672DF00942002 /* UILabel+.swift in Sources */,
 				03F59E232A1670BA00942002 /* NetworkResult.swift in Sources */,
 				03F59E532A1672BF00942002 /* UIImageView+.swift in Sources */,
