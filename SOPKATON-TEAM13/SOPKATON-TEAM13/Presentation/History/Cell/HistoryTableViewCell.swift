@@ -15,7 +15,7 @@ final class HistoryTableViewCell: UITableViewCell {
     
     static let identifier = "CarrotTableViewCell"
     
-    private let dateLabel = UILabel()
+    public let dateLabel = UILabel()
     public let thisweekLabel = UILabel()
     public let divisionLabel = UILabel()
     
@@ -45,7 +45,7 @@ final class HistoryTableViewCell: UITableViewCell {
         thisweekLabel.do {
             $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font14)
             $0.backgroundColor = Color.main
-            $0.textColor = Color.white
+            $0.textColor = .white
             $0.text = "이번주 통지서"
             $0.textAlignment = .center
             $0.layer.cornerRadius = 15

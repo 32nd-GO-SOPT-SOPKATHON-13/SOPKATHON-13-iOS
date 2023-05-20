@@ -8,7 +8,7 @@
 import UIKit
 
 class NoticeViewController: UIViewController {
-
+    public var text: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 

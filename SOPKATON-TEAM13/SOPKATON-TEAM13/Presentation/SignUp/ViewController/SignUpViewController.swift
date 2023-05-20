@@ -31,7 +31,7 @@ extension SignUpViewController {
     
     private func SetUI() {
         
-        view.backgroundColor = Color.white
+        view.backgroundColor = .white
         
         thumbnailImage.do {
             $0.image = Image.thumbnailImage
@@ -55,19 +55,19 @@ extension SignUpViewController {
             $0.spellCheckingType = .no
             $0.placeholder = "고유번호를 입력하세요."
             $0.font = UIFont.appleSDGothic(weightOf: .Regular, sizeOf: .font16)
-            $0.textColor = Color.white
+            $0.textColor = .white
             $0.textAlignment = .center
-            $0.setPlaceholderColor(placeholderColor: Color.white)
+            $0.setPlaceholderColor(placeholderColor: .white)
             $0.tintColor = .white
         }
         
         underLineView.do {
-            $0.backgroundColor = Color.white
+            $0.backgroundColor = .white
         }
         
         loginButton.do {
 //            $0.isEnabled = false
-            $0.backgroundColor = Color.white
+            $0.backgroundColor = .white
             $0.setTitle("로그인", for: .normal)
             $0.titleLabel?.font = UIFont.appleSDGothic(weightOf: .Bold, sizeOf: .font22)
             $0.setTitleColor(Color.main, for: .normal)

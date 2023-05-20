@@ -76,7 +76,7 @@ final class HistoryViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = Color.white
+        navigationController?.navigationBar.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: Image.backBtn,
             style: .plain,
@@ -113,11 +113,30 @@ final class HistoryViewController: UIViewController {
         let mainViewController = MainViewController()
         self.navigationController?.pushViewController(mainViewController, animated: false)
     }
+//    @objc
+//        func goToNotice() {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
+//            lazy var text = cell.dateLabel.text
+//            let noticeVC = NoticeViewController()
+//            noticeVC.text = text
+//            self.navigationController?.pushViewController(noticeVC, animated: true)
+//        }
 }
 
 extension HistoryViewController: UITableViewDelegate {}
 
 extension HistoryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return }
+        
+//        lazy var text = cell.dateLabel.text
+        let noticeVC = NoticeViewController()
+        print(indexPath.row)
+        noticeVC.text = "\(indexPath.row)"
+        self.navigationController?.pushViewController(noticeVC, animated: true)
+    
+    
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummy.count
