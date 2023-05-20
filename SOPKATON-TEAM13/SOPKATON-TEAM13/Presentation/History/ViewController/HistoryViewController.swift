@@ -65,7 +65,7 @@ final class HistoryViewController: UIViewController {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(0)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.leading.trailing.equalToSuperview()
         }
     }

@@ -97,6 +97,8 @@ extension neighborButtonView {
     }
     
     func isViewClicked() {
+        self.pokedCount += 1
+        countLabel.text = String(self.pokedCount)
         innerButton.innerButton.backgroundColor = Color.gray1
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.07) { [weak self] in
             self?.innerButton.innerButton.backgroundColor = .white

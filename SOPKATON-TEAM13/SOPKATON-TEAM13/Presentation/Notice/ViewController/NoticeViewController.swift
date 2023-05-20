@@ -109,7 +109,7 @@ extension NoticeViewController {
     }
     
     private func popToHistory() {
-        print("popToHistory")
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setNavigationBar() {

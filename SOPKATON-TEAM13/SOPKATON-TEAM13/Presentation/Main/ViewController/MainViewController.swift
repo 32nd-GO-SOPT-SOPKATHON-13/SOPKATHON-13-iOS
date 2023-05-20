@@ -13,7 +13,6 @@ import Then
 final class MainViewController: UIViewController {
     
     private let mainAPIManager = MainCountManager.shared
-//    private lazy var datasFetched =
     private lazy var buttonWidth = UIScreen.main.bounds.width / 3.08
     private lazy var buttonHeight = buttonWidth * 1.19
     private var initialData: NeighborModel = NeighborModel(upperCount: [], lowerCount: [], leftCount: [], rightCount: [], myCount: 0)
@@ -43,6 +42,11 @@ final class MainViewController: UIViewController {
             self?.rightHouseView.configureView(passedAddress: $0.rightCount[0], passedCount: $0.rightCount[1])
             self?.configureCell($0.myCount)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 
@@ -78,6 +82,7 @@ extension MainViewController {
         
         moveToBillButton.do {
             $0.setImage(UIImage(named: "bill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            $0.addTarget(self, action: #selector(moveToBillPage), for: .touchUpInside)
         }
     }
     
@@ -133,10 +138,8 @@ extension MainViewController {
         mainAPIManager.getCounts { response in
             switch response {
             case .success(let data):
-                print("erhkugerhuerghkuer")
 
                 guard let data = data as? MainResponses else {
-                    print("eragljknrgkjerkgbkerbgkebrgkberkg")
                     return }
                 let countData = data.data
                 self.initialData.upperCount = countData.up
@@ -162,26 +165,58 @@ extension MainViewController {
         attribtuedString.addAttribute(.font, value: UIFont.appleSDGothic(weightOf: .Bold, sizeOf: .font24) ?? UIFont(), range: range)
         todayPokedCount.attributedText = attribtuedString
     }
+    
+    func jumpAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "position.y")
+        animation.values = [0, 4, -7, 7, -4, 0]
+        animation.keyTimes = [0, 0.1, 0.2, 0.3, 0.41, 0.55]
+        animation.duration = 0.55
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
+        mainCharacterImageView.layer.add(animation, forKey: nil)
+    }
+    
+    func shakeAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "position.x")
+        animation.values = [0, 4, -7, 7, -4, 0]
+        animation.keyTimes = [0, 0.1, 0.2, 0.3, 0.41, 0.55]
+        animation.duration = 0.55
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
+        mainCharacterImageView.layer.add(animation, forKey: nil)
+    }
 }
 
 extension MainViewController {
     @objc
+    private func moveToBillPage() {
+        let nextVC = HistoryViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc
     private func upperButtonTapped() {
         upperHouseView.isViewClicked()
+        jumpAnimation()
     }
     
     @objc
     private func lowerButtonTapped() {
         lowerHouseView.isViewClicked()
+        jumpAnimation()
     }
     
     @objc
     private func leftButtonTapped() {
         leftHouseView.isViewClicked()
+        shakeAnimation()
     }
     
     @objc
     private func rightButtonTapped() {
         rightHouseView.isViewClicked()
+        shakeAnimation()
     }
 }
