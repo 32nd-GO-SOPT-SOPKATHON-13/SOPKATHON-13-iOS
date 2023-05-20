@@ -107,16 +107,20 @@ extension NoticeViewController {
         noticeCollectionView.registerCell(NoticeCollectionViewCell.self)
     }
     
+    private func popToHistory() {
+        print("popToHistory")
+    }
+    
     private func setNavigationBar() {
-//        navigationController?.navigationBar.tintColor = Color.white
+        navigationController?.navigationBar.tintColor = Color.gray9
         navigationController?.navigationBar.backgroundColor = Color.white
-//        let buttonInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8) // 원하는 여백 값으로 수정
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(
-//            image: Image.carrotBack,
-//            style: .plain,
-//            target: self,
-//            action: #selector(backButtonTapped)
-//        )
+        let buttonInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8) // 원하는 여백 값으로 수정
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: Image.backBtn,
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
         
         let title = "소음고지서"
         let attributes: [NSAttributedString.Key: Any] = [
@@ -134,6 +138,10 @@ extension NoticeViewController {
     }
     
     // MARK: - @objc Methods
+    
+    @objc private func backButtonTapped() {
+        popToHistory()
+    }
 }
 
 extension NoticeViewController: UICollectionViewDelegateFlowLayout {
