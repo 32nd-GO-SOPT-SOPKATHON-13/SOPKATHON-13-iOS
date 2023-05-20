@@ -78,6 +78,7 @@ extension MainViewController {
         
         moveToBillButton.do {
             $0.setImage(UIImage(named: "bill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            $0.addTarget(self, action: #selector(moveToBillPage), for: .touchUpInside)
         }
     }
     
@@ -185,6 +186,12 @@ extension MainViewController {
 }
 
 extension MainViewController {
+    @objc
+    private func moveToBillPage() {
+        let nextVC = HistoryViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     @objc
     private func upperButtonTapped() {
         upperHouseView.isViewClicked()

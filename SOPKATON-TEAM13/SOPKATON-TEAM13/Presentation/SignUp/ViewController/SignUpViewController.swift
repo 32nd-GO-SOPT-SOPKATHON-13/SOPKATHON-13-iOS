@@ -144,32 +144,35 @@ extension SignUpViewController {
         
         LoginService.get.signUp(keyNumber: text) { response in
             switch response {
-            case .success(let data):
-                guard let data = data as? SignUpResponse else { return }
-                
+            case .success(_):
+                self.navigateToMainView {
+                    DispatchQueue.main.async { [weak self] in
+                        let nextVC = MainViewController()
+                        self?.navigationController?.pushViewController(nextVC, animated: true)
+                    }
+                }
                 DispatchQueue.main.async {
                     self.underLineView.backgroundColor = Color.white
                     self.errorLabel.isHidden = true
                 }
-                dump(data)
             case .pathErr:
-                print("tlqkftlqkf1")
                 return
             case .serverErr:
-                print("tlqkftlqkf2")
                 DispatchQueue.main.async {
                     self.underLineView.backgroundColor = Color.yellow
                     self.errorLabel.isHidden = false
                 }
                 return
             case .networkErr:
-                print("tlqkftlqkf3")
                 return
             default:
-                print("tlqkftlqkf")
                 return
             }
         }
+    }
+    
+    private func navigateToMainView(completion: @escaping () -> Void) {
+        completion()
     }
     
     @objc func nextButtonTapped() {
