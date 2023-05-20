@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+// MARK: - SignUpResponse
+struct SignUpResponse: Codable {
+    let code: Int
+    let message: String
+    let data: Int
+}
