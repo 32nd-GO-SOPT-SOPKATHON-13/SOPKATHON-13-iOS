@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct NeighborModel: Codable {
+    var upperCount, lowerCount, leftCount, rightCount: [Int]
+    var myCount: Int
+}
