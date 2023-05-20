@@ -13,8 +13,7 @@
             </a>
         </td>
       <td style="min-width: 150px;">
-            <a href="https://github.com/![](https://velog.velcdn.com/images/kwonjeong/post/470480ff-9310-4497-99de-06be48202c91/image.jpeg)
-ckkim817">
+            <a href="https://github.com/ckkim817">
               <img src="https://velog.velcdn.com/images/kwonjeong/post/23403993-2d87-4ac2-bfe6-4806121d9d3c/image.jpeg" width="200" alt="깃허브계정-프로필사진">
               <br />
               <b>ckkim817</b>
