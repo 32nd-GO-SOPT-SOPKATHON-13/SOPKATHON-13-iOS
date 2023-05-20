@@ -20,8 +20,8 @@
 		03F59E0F2A166FF600942002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E0E2A166FF600942002 /* Assets.xcassets */; };
 		03F59E122A166FF600942002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E102A166FF600942002 /* LaunchScreen.storyboard */; };
 		03F59E232A1670BA00942002 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E222A1670BA00942002 /* NetworkResult.swift */; };
+		03F59E292A1670FE00942002 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E282A1670FE00942002 /* Main.swift */; };
 		03F59E2C2A16710B00942002 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E2B2A16710B00942002 /* MainCell.swift */; };
-		03F59E302A16714F00942002 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E2F2A16714F00942002 /* Color.xcassets */; };
 		03F59E352A16717300942002 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E342A16717300942002 /* Font.swift */; };
 		03F59E392A1671D400942002 /* CustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E382A1671D400942002 /* CustomClass.swift */; };
 		03F59E3D2A1671F200942002 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E3C2A1671F200942002 /* Image.swift */; };
@@ -44,7 +44,6 @@
 		03F59E632A1673D600942002 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 03F59E622A1673D600942002 /* Then */; };
 		03F59E662A1673E200942002 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03F59E652A1673E200942002 /* Kingfisher */; };
 		03F59E692A1673ED00942002 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 03F59E682A1673ED00942002 /* Alamofire */; };
-		03F59E6B2A18FD4F00942002 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E6A2A18FD4F00942002 /* Image.xcassets */; };
 		03F59E712A190CC600942002 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E702A190CC600942002 /* SignUpViewController.swift */; };
 		03F59E732A190CDD00942002 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E722A190CDD00942002 /* SignUpView.swift */; };
 		03F59E752A190CE800942002 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E742A190CE800942002 /* SignUp.swift */; };
@@ -83,6 +82,7 @@
 		03F59E112A166FF600942002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F59E132A166FF600942002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F59E222A1670BA00942002 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		03F59E282A1670FE00942002 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		03F59E2B2A16710B00942002 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		03F59E2F2A16714F00942002 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03F59E342A16717300942002 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -625,11 +625,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F59E122A166FF600942002 /* LaunchScreen.storyboard in Resources */,
-				03F59E302A16714F00942002 /* Color.xcassets in Resources */,
-				03F59E6B2A18FD4F00942002 /* Image.xcassets in Resources */,
-				03F59E0F2A166FF600942002 /* Assets.xcassets in Resources */,
-				03F59E0D2A166FF400942002 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +655,6 @@
 				03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */,
 				03F59E972A1910E300942002 /* NoticeModel.swift in Sources */,
 				03F59E552A1672DF00942002 /* UILabel+.swift in Sources */,
-				03F59E232A1670BA00942002 /* NetworkResult.swift in Sources */,
 				03F59E532A1672BF00942002 /* UIImageView+.swift in Sources */,
 				03F59E572A1672F100942002 /* UIButton+.swift in Sources */,
 				03F59E7E2A190DFB00942002 /* HistoryView.swift in Sources */,

@@ -76,12 +76,12 @@ final class HistoryViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = Color.white
+        navigationController?.navigationBar.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: Image.backBtn,
             style: .plain,
             target: self,
-            action: .none
+            action: #selector(backButtonTapped)
         )
         
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -100,11 +100,43 @@ final class HistoryViewController: UIViewController {
             navigationItem.titleView = titleLabel
         }
     }
+    @objc
+    func backButtonTapped() {
+        let transition = CATransition().then {
+            $0.duration = 0.25
+            $0.type = .push
+            $0.subtype = .fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        view.window?.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false)
+        let mainViewController = MainViewController()
+        self.navigationController?.pushViewController(mainViewController, animated: false)
+    }
+//    @objc
+//        func goToNotice() {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
+//            lazy var text = cell.dateLabel.text
+//            let noticeVC = NoticeViewController()
+//            noticeVC.text = text
+//            self.navigationController?.pushViewController(noticeVC, animated: true)
+//        }
 }
 
 extension HistoryViewController: UITableViewDelegate {}
 
 extension HistoryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return }
+        
+//        lazy var text = cell.dateLabel.text
+        let noticeVC = NoticeViewController()
+        print(indexPath.row)
+        noticeVC.text = "\(indexPath.row)"
+        self.navigationController?.pushViewController(noticeVC, animated: true)
+    
+    
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummy.count

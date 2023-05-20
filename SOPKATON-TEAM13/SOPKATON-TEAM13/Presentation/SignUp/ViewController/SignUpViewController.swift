@@ -58,14 +58,14 @@ extension SignUpViewController {
             $0.spellCheckingType = .no
             $0.placeholder = "고유번호를 입력하세요."
             $0.font = UIFont.appleSDGothic(weightOf: .Regular, sizeOf: .font16)
-            $0.textColor = Color.white
+            $0.textColor = .white
             $0.textAlignment = .center
-            $0.setPlaceholderColor(placeholderColor: Color.white)
+            $0.setPlaceholderColor(placeholderColor: .white)
             $0.tintColor = .white
         }
         
         underLineView.do {
-            $0.backgroundColor = Color.white
+            $0.backgroundColor = .white
         }
         
         loginButton.do {
