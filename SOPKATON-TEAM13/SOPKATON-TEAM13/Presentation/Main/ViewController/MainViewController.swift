@@ -133,10 +133,8 @@ extension MainViewController {
         mainAPIManager.getCounts { response in
             switch response {
             case .success(let data):
-                print("erhkugerhuerghkuer")
 
                 guard let data = data as? MainResponses else {
-                    print("eragljknrgkjerkgbkerbgkebrgkberkg")
                     return }
                 let countData = data.data
                 self.initialData.upperCount = countData.up
@@ -162,26 +160,52 @@ extension MainViewController {
         attribtuedString.addAttribute(.font, value: UIFont.appleSDGothic(weightOf: .Bold, sizeOf: .font24) ?? UIFont(), range: range)
         todayPokedCount.attributedText = attribtuedString
     }
+    
+    func jumpAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "position.y")
+        animation.values = [0, 4, -7, 7, -4, 0]
+        animation.keyTimes = [0, 0.1, 0.2, 0.3, 0.41, 0.55]
+        animation.duration = 0.55
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
+        mainCharacterImageView.layer.add(animation, forKey: nil)
+    }
+    
+    func shakeAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "position.x")
+        animation.values = [0, 4, -7, 7, -4, 0]
+        animation.keyTimes = [0, 0.1, 0.2, 0.3, 0.41, 0.55]
+        animation.duration = 0.55
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
+        mainCharacterImageView.layer.add(animation, forKey: nil)
+    }
 }
 
 extension MainViewController {
     @objc
     private func upperButtonTapped() {
         upperHouseView.isViewClicked()
+        jumpAnimation()
     }
     
     @objc
     private func lowerButtonTapped() {
         lowerHouseView.isViewClicked()
+        jumpAnimation()
     }
     
     @objc
     private func leftButtonTapped() {
         leftHouseView.isViewClicked()
+        shakeAnimation()
     }
     
     @objc
     private func rightButtonTapped() {
         rightHouseView.isViewClicked()
+        shakeAnimation()
     }
 }

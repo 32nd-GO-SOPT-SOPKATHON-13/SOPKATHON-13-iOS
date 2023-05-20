@@ -60,11 +60,11 @@
 		03F59EA12A19113F00942002 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA02A19113F00942002 /* MainResponse.swift */; };
 		03F59EA32A19115000942002 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA22A19115000942002 /* HistoryResponse.swift */; };
 		03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59EA42A19115800942002 /* NoticeResponse.swift */; };
-		DF4702562A194E0900A71214 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4702552A194E0900A71214 /* LoginService.swift */; };
+		09329F3E2A192F3E00B10751 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */; };
 		58F359832A19195800C094F0 /* neighborButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359822A19195800C094F0 /* neighborButtonView.swift */; };
 		58F359852A1920BE00C094F0 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359842A1920BE00C094F0 /* UIColor+.swift */; };
 		58F359872A1933A100C094F0 /* InnerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F359862A1933A100C094F0 /* InnerButtonView.swift */; };
-		09329F3E2A192F3E00B10751 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */; };
+		DF4702562A194E0900A71214 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4702552A194E0900A71214 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,11 +119,11 @@
 		03F59EA02A19113F00942002 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		03F59EA22A19115000942002 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
 		03F59EA42A19115800942002 /* NoticeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeResponse.swift; sourceTree = "<group>"; };
-		DF4702552A194E0900A71214 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		58F359822A19195800C094F0 /* neighborButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = neighborButtonView.swift; sourceTree = "<group>"; };
 		58F359842A1920BE00C094F0 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		58F359862A1933A100C094F0 /* InnerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerButtonView.swift; sourceTree = "<group>"; };
-		09329F3D2A192F3E00B10751 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		DF4702552A194E0900A71214 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -655,7 +655,6 @@
 				03F59EA12A19113F00942002 /* MainResponse.swift in Sources */,
 				03F59E592A16730E00942002 /* UITabBar+.swift in Sources */,
 				03F59E772A190D0500942002 /* MainViewController.swift in Sources */,
-				03F59E8B2A190EEB00942002 /* Notice.swift in Sources */,
 				DF4702562A194E0900A71214 /* LoginService.swift in Sources */,
 				03F59E952A1910D800942002 /* HistoryModel.swift in Sources */,
 				03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */,
@@ -672,7 +671,6 @@
 				03F59E352A16717300942002 /* Font.swift in Sources */,
 				03F59E5B2A16735B00942002 /* UIImage+.swift in Sources */,
 				03F59E472A16724D00942002 /* NSObject+.swift in Sources */,
-				03F59E292A1670FE00942002 /* Main.swift in Sources */,
 				037DD42B2A194DFC00D87C61 /* MainService.swift in Sources */,
 				03F59E932A1910D000942002 /* MainModel.swift in Sources */,
 				09329F3E2A192F3E00B10751 /* HistoryTableViewCell.swift in Sources */,
