@@ -43,7 +43,6 @@ extension NoticeCollectionViewCell {
         titleLabel.do {
             $0.font = .systemFont(ofSize: 18, weight: .bold)
             $0.textColor = Color.gray9
-//            $0.text = "가나다라"
         }
         
         countLabel.do {
@@ -54,7 +53,6 @@ extension NoticeCollectionViewCell {
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
             $0.sizeToFit()
-//            $0.text = "999"
         }
         
         underLineView.do {
@@ -76,7 +74,6 @@ extension NoticeCollectionViewCell {
         countLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(19)
-//            $0.width.equalTo(60)
             $0.height.equalTo(32)
         }
         
