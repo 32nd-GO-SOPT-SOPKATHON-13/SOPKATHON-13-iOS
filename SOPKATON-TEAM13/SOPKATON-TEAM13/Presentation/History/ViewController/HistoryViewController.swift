@@ -121,13 +121,15 @@ final class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDelegate {}
 
 extension HistoryViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let noticeVC = NoticeViewController()
-        print(indexPath.row)
-        print(historyModel[indexPath.row])
-        self.navigationController?.pushViewController(noticeVC, animated: true)
-        
-        
+//        let noticeVC = NoticeViewController()
+        let nextVC = NoticeViewController()
+//        print(indexPath.row)
+//        print(historyModel[indexPath.row].month)
+
+        nextVC.pass(week: historyModel[indexPath.row].week, month: historyModel[indexPath.row].month)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

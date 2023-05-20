@@ -13,6 +13,8 @@ import Then
 final class NoticeWeekView: UIView {
     
     // MARK: - UI Components
+    var week: String
+    var month: String
     
     private let noticeWeekLabel = UILabel()
     private let noiseCostLabel = UILabel()
@@ -23,11 +25,18 @@ final class NoticeWeekView: UIView {
     
     // MARK: - View Life Cycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(month: String, week: String) {
+        self.month = month
+        self.week = week
+        super.init(frame: .zero)
         setUI()
         setLayout()
     }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -43,7 +52,7 @@ extension NoticeWeekView {
         backgroundColor = Color.white
         
         noticeWeekLabel.do {
-            $0.text = "2023년 5월분"
+            $0.text = "Asda"
             $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font18)
             $0.textColor = Color.gray9
         }
@@ -73,6 +82,10 @@ extension NoticeWeekView {
     }
     
     // MARK: - Methods
+    func pass(week: String, month: String) {
+        noticeWeekLabel.text = "\(month)월 \(week)주차"
+        
+    }
     
     // MARK: - @objc Methods
 }

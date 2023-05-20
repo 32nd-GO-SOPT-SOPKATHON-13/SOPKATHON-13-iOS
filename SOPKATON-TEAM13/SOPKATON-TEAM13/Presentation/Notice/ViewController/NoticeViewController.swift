@@ -17,7 +17,7 @@ final class NoticeViewController: UIViewController {
     
     
     private let noticeProfileView = NoticeProfileView()
-    private let noticeWeekView = NoticeWeekView()
+    private let noticeWeekView = NoticeWeekView(month: "", week: "")
     private let noticeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -26,6 +26,8 @@ final class NoticeViewController: UIViewController {
     }()
     private let noticeTitleModel = NoticeModel.fetchNoticeModelData()
     private var noticeServerModel: [NoticeServerModel] = []
+    var month: String = ""
+    var week: String = ""
     
     // MARK: - Properties
     
@@ -37,6 +39,8 @@ final class NoticeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.clipsToBounds = true
+        noticeWeekView.month = self.month
+        noticeWeekView.week = self.week
     }
     
     override func viewDidLoad() {
@@ -190,6 +194,10 @@ extension NoticeViewController: UICollectionViewDataSource {
 }
 
 extension NoticeViewController {
+    
+    func pass(week: String, month: String) {
+        self.noticeWeekView.pass(week: week, month: month)
+    }
     
     private func fetchNotice() {
         NoticeService.shared.notice { response in
