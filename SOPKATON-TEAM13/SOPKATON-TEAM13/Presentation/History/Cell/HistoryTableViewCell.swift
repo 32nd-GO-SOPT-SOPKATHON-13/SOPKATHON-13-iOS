@@ -15,7 +15,7 @@ final class HistoryTableViewCell: UITableViewCell {
     
     static let identifier = "CarrotTableViewCell"
     
-    private let dateLabel = UILabel()
+    public let dateLabel = UILabel()
     public let thisweekLabel = UILabel()
     public let divisionLabel = UILabel()
     

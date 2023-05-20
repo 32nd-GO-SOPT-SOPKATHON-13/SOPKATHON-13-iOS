@@ -6,13 +6,7 @@
 //
 
 import UIKit
-
 import Then
-
-
-import UIKit
-
-
 
 final class HistoryViewController: UIViewController {
     
@@ -30,15 +24,16 @@ final class HistoryViewController: UIViewController {
     deinit {
         print("DEINIT: \(className)")
     }
-
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setStyle()
         setLayout()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        fetchHistory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,10 +43,10 @@ final class HistoryViewController: UIViewController {
     
     // MARK: UI
     
-
+    
     private let tableView = UITableView()
     
-    private let dummy = HistoryData.dummy()
+    private var historyModel: [HistoryData] = []
     
     func setStyle() {
         
@@ -76,12 +71,12 @@ final class HistoryViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = Color.white
+        navigationController?.navigationBar.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: Image.backBtn,
             style: .plain,
             target: self,
-            action: .none
+            action: #selector(backButtonTapped)
         )
         
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -100,25 +95,81 @@ final class HistoryViewController: UIViewController {
             navigationItem.titleView = titleLabel
         }
     }
+    @objc
+    func backButtonTapped() {
+        let transition = CATransition().then {
+            $0.duration = 0.25
+            $0.type = .push
+            $0.subtype = .fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        view.window?.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false)
+        let mainViewController = MainViewController()
+        self.navigationController?.pushViewController(mainViewController, animated: false)
+    }
+    //    @objc
+    //        func goToNotice() {
+    //            guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
+    //            lazy var text = cell.dateLabel.text
+    //            let noticeVC = NoticeViewController()
+    //            noticeVC.text = text
+    //            self.navigationController?.pushViewController(noticeVC, animated: true)
+    //        }
 }
 
 extension HistoryViewController: UITableViewDelegate {}
 
 extension HistoryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let noticeVC = NoticeViewController()
+        print(indexPath.row)
+        print(historyModel[indexPath.row])
+        self.navigationController?.pushViewController(noticeVC, animated: true)
+        
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummy.count
+        return historyModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
         
-        cell.configureCell(dummy[indexPath.row])
+        
         if indexPath.row == 0 {
             cell.thisweekLabel.isHidden = false
         }
-        
+        else {
+            cell.thisweekLabel.isHidden = true
+        }
+        cell.configureCell(historyModel[indexPath.row])
         return cell
+    }
+}
+
+extension HistoryViewController {
+    private func fetchHistory() {
+        HistoryService.shared.getHistory { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? HistoryResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.historyModel = data.converToHistory().reversed()
+                self.tableView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("—————경로이상——————")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
     }
 }
