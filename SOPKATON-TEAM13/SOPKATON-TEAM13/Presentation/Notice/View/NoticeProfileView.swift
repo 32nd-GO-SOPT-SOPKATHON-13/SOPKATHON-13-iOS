@@ -49,7 +49,7 @@ extension NoticeProfileView {
         }
         
         noticeImageView.do {
-            $0.image = UIImage(named: "character")
+            $0.image = Image.character
         }
         
         weekNoisePeopleLabel.do {
