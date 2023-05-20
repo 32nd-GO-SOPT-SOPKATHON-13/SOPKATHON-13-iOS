@@ -11,7 +11,7 @@ public enum Color {
     
     // MARK: - Color
     
-    public static let white = UIColor(named: "white")!
+//    public static let white = UIColor(named: "white")
     public static let gray9 = UIColor(named: "gray9")!
     public static let gray8 = UIColor(named: "gray8")!
     public static let gray7 = UIColor(named: "gray7")!
