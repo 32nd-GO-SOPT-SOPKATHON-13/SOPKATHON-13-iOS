@@ -61,7 +61,7 @@ extension NoticeProfileView {
         userNameLabel.do {
             $0.font = .appleSDGothic(weightOf: .Bold, sizeOf: .font24)
             $0.textColor = Color.gray9
-            $0.text = "권정 귀하"
+            $0.text = "권 정 귀하"
         }
     }
     
