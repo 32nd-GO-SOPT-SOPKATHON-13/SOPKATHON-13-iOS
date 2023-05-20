@@ -17,10 +17,22 @@ extension UILabel {
     }
     
     func asColor(targetString: String, color: UIColor) {
-            let fullText = text ?? ""
-            let attributedString = NSMutableAttributedString(string: fullText)
-            let range = (fullText as NSString).range(of: targetString)
-            attributedString.addAttribute(.foregroundColor, value: color, range: range)
-            attributedText = attributedString
-        }
+        let fullText = text ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: targetString)
+        attributedString.addAttribute(.foregroundColor, value: color, range: range)
+        attributedText = attributedString
+    }
+    
+    func setLineSpacing(spacing: CGFloat) {
+        guard let text = text else { return }
+        
+        let attributeString = NSMutableAttributedString(string: text)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = spacing
+        attributeString.addAttribute(.paragraphStyle,
+                                     value: style,
+                                     range: NSRange(location: 0, length: attributeString.length))
+        attributedText = attributeString
+    }
 }
