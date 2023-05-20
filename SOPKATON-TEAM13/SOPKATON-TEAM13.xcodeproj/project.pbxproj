@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037DD41A2A19231F00D87C61 /* NoticeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DD4192A19231F00D87C61 /* NoticeCollectionViewCell.swift */; };
 		03F59E062A166FF400942002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E052A166FF400942002 /* AppDelegate.swift */; };
 		03F59E082A166FF400942002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59E072A166FF400942002 /* SceneDelegate.swift */; };
 		03F59E0D2A166FF400942002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F59E0B2A166FF400942002 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		037DD4192A19231F00D87C61 /* NoticeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCollectionViewCell.swift; sourceTree = "<group>"; };
 		03F59E022A166FF400942002 /* SOPKATON-TEAM13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOPKATON-TEAM13.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F59E052A166FF400942002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F59E072A166FF400942002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				03F59E8A2A190EEB00942002 /* Notice.swift */,
+				037DD4192A19231F00D87C61 /* NoticeCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				03F59E812A190E1200942002 /* History.swift in Sources */,
 				03F59E5D2A16737B00942002 /* UIViewController+.swift in Sources */,
 				03F59E732A190CDD00942002 /* SignUpView.swift in Sources */,
+				037DD41A2A19231F00D87C61 /* NoticeCollectionViewCell.swift in Sources */,
 				03F59EA52A19115800942002 /* NoticeResponse.swift in Sources */,
 				03F59E4B2A16726A00942002 /* UIStackView+.swift in Sources */,
 				03F59E492A16725C00942002 /* UITextField+.swift in Sources */,
