@@ -21,4 +21,5 @@ public enum Color {
     public static let gray3 = UIColor(named: "gray3")!
     public static let gray2 = UIColor(named: "gray2")!
     public static let gray1 = UIColor(named: "gray1")!
+    public static let main = UIColor(named: "main")!
 }
